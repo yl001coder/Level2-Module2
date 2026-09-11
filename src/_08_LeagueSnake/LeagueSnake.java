@@ -11,7 +11,9 @@ public class LeagueSnake extends PApplet {
      * 
      * Put all the game variables here.
      */
-    
+    int head;
+    int foodX;
+    int foodY;
 
     
     /*
