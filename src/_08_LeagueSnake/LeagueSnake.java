@@ -86,7 +86,7 @@ public class LeagueSnake extends PApplet{
     	segment = segments.size();
         for(int i = 0; i < segment; i++ ) {
         	fill(133,199,109);
-        	rect(headX,headY,10,10);
+        	rect(segments.get(i).getX(),segments.get(i).getY(),10,10);
         }
     }
 
@@ -111,7 +111,7 @@ public class LeagueSnake extends PApplet{
         // If the snake crosses its own tail, shrink the tail back to one segment
     	if(snakeDir == UP) {
     		for (int i = 0; i < segment; i++) {
-    			if(segments.get(i).getX() == headX - 10 && segments.get(i).getY() == headY) {
+    			if(segments.get(i).getX() == headX&& segments.get(i).getY() == headY -10) {
     				food = 1;
     				segments.clear();
     				burp = new Segment(headX, headY);
@@ -122,7 +122,7 @@ public class LeagueSnake extends PApplet{
     	}
     	else if(snakeDir == DOWN) {
     		for (int i = 0; i < segment; i++) {
-    			if(segments.get(i).getX() == headX + 10 && segments.get(i).getY() == headY) {
+    			if(segments.get(i).getX() == headX&& segments.get(i).getY() == headY + 10) {
     				food = 1;
     				segments.clear();
     				burp = new Segment(headX, headY);
@@ -133,7 +133,7 @@ public class LeagueSnake extends PApplet{
     	}
     	else if(snakeDir == LEFT) {
     		for(int i = 0; i < segment; i++) {
-    			if(segments.get(i).getX() == headX && segments.get(i).getY() == headY - 10) {
+    			if(segments.get(i).getX() == headX -10 && segments.get(i).getY() == headY) {
     				food = 1;
     				segments.clear();
     				burp = new Segment(headX, headY);
@@ -144,7 +144,7 @@ public class LeagueSnake extends PApplet{
     	}
     	else if(snakeDir == RIGHT) {
     		for(int i = 0; i < segment; i++) {
-    			if(segments.get(i).getX() == headX && segments.get(i).getY() == headY - 10) {
+    			if(segments.get(i).getX() == headX + 10 && segments.get(i).getY() == headY) {
     				food = 1;
     				segments.clear();
     				burp = new Segment(headX, headY);
